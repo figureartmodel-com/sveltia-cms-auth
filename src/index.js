@@ -109,7 +109,6 @@ const handleAuth = async (request, env) => {
 
     const params = new URLSearchParams({
       client_id: GITHUB_CLIENT_ID,
-      scope: 'repo,user',
       state: csrfToken,
     });
 
@@ -282,7 +281,7 @@ export default {
    * @param {{ [key: string]: string }} env - Environment variables.
    * @returns {Promise<Response>} HTTP response.
    * @see https://developers.cloudflare.com/workers/runtime-apis/fetch/
-   * @see https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
+   * @see https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app
    * @see https://docs.gitlab.com/ee/api/oauth2.html#authorization-code-flow
    */
   async fetch(request, env) {
